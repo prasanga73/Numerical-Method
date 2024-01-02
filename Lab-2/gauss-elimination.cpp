@@ -40,28 +40,6 @@ int main() {
             sum += a[i][j] * x[j];
         x[i] = (a[i][n] - sum) / a[i][i];
         cout << char('z'-(n-1)+i) << " = " << x[i] << endl;
-    }        
+    }   
+    return 0;
 }
-
-// Theory:
-// Change to upper triangular form
-// for j = 1 to (n-1)
-//     for i = (j+1) to n
-//         R_i = R_i - (a_ij/a_jj)*R_j
-
-// Back substitution
-// x4 = a45/a44
-// x3 = (a45-a34*x4)/a33
-// x2 = (a25-a23*x3-a24*x4)/a22
-// x1 = (a15-a12*x2-a13*x3-a14*x4)/a11
-// In general,
-//      xi = (a_i,n+1 - [j=i+1 to n => a_ij*x_j])/a_ii
-// Loop,
-//      while i = n-1 to 1 (countdown)
-
-// Question
-// x+2y+3z-u=10
-// 2x+3y-3z-u=1
-// 2x-y+2z+3u=7
-// 3x+2y-4z+3u=2
-// Ans = 1, 2, 2, 1
